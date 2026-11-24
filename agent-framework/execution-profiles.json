@@ -1,0 +1,25 @@
+{
+  "schema_version": 3,
+  "selection": "Choose by actual scope, user time constraints and available evidence, not by discipline name.",
+  "profiles": {
+    "quick": {
+      "use_for": "Single explanation, short translation, local polish or narrowly scoped lookup.",
+      "records_required": false,
+      "behavior": "Load only the selected workflow's necessary modules; perform applicable checks locally without a full dossier. Persist version-bound receipts if recording a reusable pass.",
+      "source_quota": null
+    },
+    "standard": {
+      "use_for": "Multi-step work, analytical visuals, manuscript/booklet alignment or reusable delivery.",
+      "records_required": true,
+      "behavior": "Record scope, versioned inputs, protections, actual outputs and receipts; inspect the relevant exported artifacts.",
+      "source_quota": null
+    },
+    "deep": {
+      "use_for": "Substantive research, major argument changes or consequential cross-artifact review.",
+      "records_required": true,
+      "behavior": "Add contrary explanations and targeted verification within an explicit task budget; do not spawn subagents without authorization or repeat unaffected stages.",
+      "source_quota": null
+    }
+  },
+  "unavailable_cost_fields": "Use null unless the host exposes actual token usage or monetary cost."
+}

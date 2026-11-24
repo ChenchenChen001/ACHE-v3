@@ -1,0 +1,21 @@
+{
+  "id": "ACHE-new-project",
+  "workflow_id": "framework-maintenance",
+  "operation": "configure",
+  "depth": "quick",
+  "scope": "template_setup",
+  "required_checks": [],
+  "check_exemptions": {
+    "source_grounding": "Template restored; no task or verified outputs claimed.",
+    "configuration_integrity": "Template restored; no task or verified outputs claimed.",
+    "policy_integrity": "Template restored; no task or verified outputs claimed.",
+    "delivery_integrity": "Template restored; no task or verified outputs claimed."
+  },
+  "checks": {},
+  "verification_method": "not_run",
+  "independent_verification": false,
+  "edit_authorized": false,
+  "edits_made": false,
+  "protected_paths": [],
+  "protected_content": []
+}

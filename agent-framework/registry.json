@@ -1,0 +1,187 @@
+{
+  "name": "ACHE Art & Design Agent Framework",
+  "version": "3.0.0",
+  "created_on": "2026-11-23",
+  "deployment": "project-instructions",
+  "entry": "AGENTS.md",
+  "default_language": "paired-zh-en",
+  "default_agent_mode": "one-primary-agent-with-on-demand-modules",
+  "modules": {
+    "research": {
+      "file": "roles/research.md",
+      "output": "verified source pool, comparison, findings and gaps",
+      "input_contract": [
+        "questions, context, available sources"
+      ],
+      "output_contract": [
+        "source-grounded comparison and material gaps"
+      ],
+      "checks": [
+        "source_grounding",
+        "citation_accuracy"
+      ]
+    },
+    "concepts": {
+      "file": "roles/concepts.md",
+      "output": "distinct concepts, trade-offs and next experiments",
+      "input_contract": [
+        "intent, materials, relevant research and constraints"
+      ],
+      "output_contract": [
+        "distinct propositions, trade-offs and next experiment"
+      ],
+      "checks": [
+        "scope_fit",
+        "evidence_alignment"
+      ]
+    },
+    "visuals": {
+      "file": "roles/visuals.md",
+      "output": "editable diagrams, accurate charts, illustrations and inspected exports",
+      "input_contract": [
+        "visual brief, source data/materials, protected geometry"
+      ],
+      "output_contract": [
+        "editable source, export and actual inspection record"
+      ],
+      "checks": [
+        "evidence_alignment",
+        "visual_inspection"
+      ]
+    },
+    "writing": {
+      "file": "roles/writing.md",
+      "output": "evidence-matched prose with preserved anti-defensive writing",
+      "input_contract": [
+        "operation, author material, evidence map, protected wording"
+      ],
+      "output_contract": [
+        "clean prose, argument trace and material change notes"
+      ],
+      "checks": [
+        "argument_chain",
+        "evidence_alignment",
+        "expression_fidelity"
+      ]
+    },
+    "verify": {
+      "file": "roles/verify.md",
+      "output": "source-grounded findings with checked scope and severity",
+      "input_contract": [
+        "actual current artifacts, sources and checked scope"
+      ],
+      "output_contract": [
+        "located findings, counter-evidence and actual verification coverage"
+      ],
+      "checks": [
+        "citation_accuracy",
+        "cross_artifact_alignment"
+      ]
+    },
+    "critique": {
+      "file": "roles/critique.md",
+      "output": "reasoned critique of intent, form, context and experience",
+      "input_contract": [
+        "visible work, intention, context and relevant criteria"
+      ],
+      "output_contract": [
+        "reasoned interpretations, alternatives and practical next steps"
+      ],
+      "checks": [
+        "scope_fit"
+      ]
+    },
+    "production": {
+      "file": "roles/production.md",
+      "output": "prototype, fabrication or interaction plan with real test records",
+      "input_contract": [
+        "concept, dimensions, equipment, resources and uncertainty"
+      ],
+      "output_contract": [
+        "prototype/test plan or actual observed test record"
+      ],
+      "checks": [
+        "production_observation"
+      ]
+    },
+    "delivery": {
+      "file": "roles/delivery.md",
+      "output": "requested formats, editable sources and bounded verification summary",
+      "input_contract": [
+        "requested outputs, current artifacts and required checks"
+      ],
+      "output_contract": [
+        "usable outputs, editable sources and bounded completion summary"
+      ],
+      "checks": [
+        "delivery_integrity"
+      ]
+    }
+  },
+  "policies": [
+    "policies/anti-defensive-integration.md",
+    "policies/anti-defensive-writing.LICENSE.txt"
+  ],
+  "references": [
+    "references/evidence.md",
+    "references/review-and-release.md",
+    "references/paradigm-routing.md",
+    "references/research-protocol.md",
+    "references/writing-modes.md",
+    "references/citation-verification.md",
+    "references/visual-contract.md",
+    "references/supervisor-adaptation.md",
+    "references/SUPERVISOR-SKILLS-LICENSE.txt",
+    "references/version-bound-checks.md",
+    "references/local-protection.md",
+    "references/workflow-pilots.md",
+    "references/portability-and-cost.md",
+    "execution-profiles.json"
+  ],
+  "project_records": [
+    "project/brief.json",
+    "project/sources.json",
+    "project/claims.json",
+    "project/assets.json",
+    "project/status.json",
+    "project/decisions.md",
+    "project/task.json",
+    "project/reviews.json",
+    "project/checks.json"
+  ],
+  "preserved_policies": [
+    {
+      "name": "anti-defensive-writing",
+      "language": "zh",
+      "original_path": null,
+      "snapshot": "policies/anti-defensive-writing.zh.md",
+      "sha256": "6f072e66f6adf813bc1b4291754f2bc07ed4e65a398359844e97bfa215a1c28e",
+      "source_url": "https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill/blob/main/skills/anti-defensive-writing/SKILL.md"
+    },
+    {
+      "name": "anti-defensive-writing-en",
+      "language": "en",
+      "original_path": null,
+      "snapshot": "policies/anti-defensive-writing.en.md",
+      "sha256": "49705a92677d06b1be9f78be5be4f966b1d30c4ed72a3b97c86a973d06683b9b",
+      "source_url": "https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill/blob/main/skills/anti-defensive-writing-en/SKILL.md"
+    }
+  ],
+  "required_capability_policy": "Discover available tools at task time, use suitable connected tools first, and disclose missing capability without inventing results.",
+  "subagent_policy": "Optional and task-scoped; require explicit user authorization or applicable higher-priority permission; never imply a fresh independent check occurred when it did not.",
+  "schema_version": 3,
+  "modified_on": "2026-11-24",
+  "workflows": "workflows.json",
+  "quality_gates": "quality-gates.json",
+  "upstream_lock": "upstream.lock.json",
+  "templates": [
+    "templates/research-brief.md",
+    "templates/argument-blueprint.md",
+    "templates/visual-brief.md",
+    "templates/alignment-review.md",
+    "templates/framework-guide.md",
+    "templates/studio-critique.md"
+  ],
+  "receipt_policy": "version-bound",
+  "execution_profiles": "execution-profiles.json"
+}

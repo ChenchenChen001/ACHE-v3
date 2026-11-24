@@ -1,0 +1,5 @@
+{
+  "status": "partial",
+  "scope": "template_setup",
+  "next_action": "Read the current request, choose a workflow and run applicable checks."
+}

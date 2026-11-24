@@ -1,0 +1,86 @@
+{
+  "schema_version": 3,
+  "statuses": [
+    "pass",
+    "fail",
+    "partial",
+    "not_run",
+    "not_applicable",
+    "inconclusive"
+  ],
+  "gates": {
+    "scope_fit": {
+      "label": "范围与方法",
+      "question": "Does the output fit the requested operation, project method and protected scope?",
+      "repair_module": "concepts",
+      "check_kind": "source-and-context-review"
+    },
+    "source_grounding": {
+      "label": "来源与覆盖",
+      "question": "Were relevant sources actually accessed, reading scope recorded, and questions addressed?",
+      "repair_module": "research",
+      "check_kind": "source-reading"
+    },
+    "evidence_alignment": {
+      "label": "主张与材料",
+      "question": "Does each material factual claim have specific support at the asserted level?",
+      "repair_module": "research",
+      "check_kind": "claim-source-comparison"
+    },
+    "argument_chain": {
+      "label": "论证链",
+      "question": "Do questions, material, reasoning, propositions and contributions connect?",
+      "repair_module": "writing",
+      "check_kind": "argument-review"
+    },
+    "citation_accuracy": {
+      "label": "引用核查",
+      "question": "Do entries exist and does the actual source support the cited statement?",
+      "repair_module": "verify",
+      "check_kind": "retrieval-and-source-reading"
+    },
+    "visual_inspection": {
+      "label": "实际图像检查",
+      "question": "Was the actual output opened and checked at the intended viewing size?",
+      "repair_module": "visuals",
+      "check_kind": "visual-inspection"
+    },
+    "cross_artifact_alignment": {
+      "label": "跨文件一致性",
+      "question": "Were the actual source and derivative claims, captions and references compared?",
+      "repair_module": "verify",
+      "check_kind": "artifact-comparison"
+    },
+    "production_observation": {
+      "label": "制作与测试状态",
+      "question": "Are plans, simulations, performed tests and observations distinguished?",
+      "repair_module": "production",
+      "check_kind": "record-and-physical-evidence-review"
+    },
+    "expression_fidelity": {
+      "label": "表达与原意",
+      "question": "Does the language preserve intent, evidence strength, protected text and anti-defensive writing?",
+      "repair_module": "writing",
+      "check_kind": "meaning-comparison"
+    },
+    "delivery_integrity": {
+      "label": "交付完整性",
+      "question": "Do requested files and formats work, with truthful verification scope?",
+      "repair_module": "delivery",
+      "check_kind": "artifact-inspection"
+    },
+    "configuration_integrity": {
+      "label": "配置与回归",
+      "question": "Do configuration references, records and regression checks pass within their stated scope?",
+      "repair_module": "verify",
+      "check_kind": "structural-check"
+    },
+    "policy_integrity": {
+      "label": "原技能保留",
+      "question": "Are both original anti-defensive writing policies and reference snapshots preserved?",
+      "repair_module": "verify",
+      "check_kind": "byte-comparison"
+    }
+  },
+  "policy": "Run only applicable checks. A status is a declared performed check, not proof by itself. Static validation never establishes source truth or artistic quality."
+}

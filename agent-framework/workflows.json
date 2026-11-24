@@ -1,0 +1,242 @@
+{
+  "schema_version": 3,
+  "selection": "Choose by user operation and actual deliverable; modules are available stages, not a requirement to execute each one.",
+  "small_task_policy": "Keep checks local for short tasks; do not create a full written dossier unnecessarily.",
+  "workflows": {
+    "research-quick": {
+      "label": "单点调研",
+      "operation": "lookup",
+      "modules": [
+        "research"
+      ],
+      "required_checks": [
+        "source_grounding"
+      ],
+      "outputs": [
+        "answer and relevant opened sources"
+      ],
+      "failure_routes": {
+        "source_grounding": "research"
+      }
+    },
+    "research-synthesis": {
+      "label": "文献与案例综合",
+      "operation": "synthesis",
+      "modules": [
+        "research",
+        "verify",
+        "writing"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "source_grounding",
+        "evidence_alignment",
+        "citation_accuracy"
+      ],
+      "outputs": [
+        "question-led comparisons, disagreements, implications and sources"
+      ],
+      "failure_routes": {
+        "scope_fit": "research",
+        "source_grounding": "research",
+        "evidence_alignment": "research",
+        "citation_accuracy": "verify"
+      }
+    },
+    "concept-exploration": {
+      "label": "概念与方向",
+      "operation": "explore",
+      "modules": [
+        "research",
+        "concepts",
+        "critique"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "evidence_alignment"
+      ],
+      "outputs": [
+        "distinct directions, rationale, trade-offs and next experiment"
+      ],
+      "failure_routes": {
+        "scope_fit": "concepts",
+        "evidence_alignment": "research"
+      }
+    },
+    "visual-production": {
+      "label": "作图与视觉制作",
+      "operation": "draw",
+      "modules": [
+        "visuals",
+        "verify",
+        "delivery"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "evidence_alignment",
+        "visual_inspection",
+        "delivery_integrity"
+      ],
+      "outputs": [
+        "visual brief, editable source, actual export and inspection"
+      ],
+      "failure_routes": {
+        "scope_fit": "visuals",
+        "evidence_alignment": "verify",
+        "visual_inspection": "visuals",
+        "delivery_integrity": "delivery"
+      }
+    },
+    "writing-plan": {
+      "label": "论证规划",
+      "operation": "plan",
+      "modules": [
+        "research",
+        "writing"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "evidence_alignment",
+        "argument_chain"
+      ],
+      "outputs": [
+        "evidence map and argument blueprint"
+      ],
+      "failure_routes": {
+        "scope_fit": "writing",
+        "evidence_alignment": "research",
+        "argument_chain": "writing"
+      }
+    },
+    "writing-draft": {
+      "label": "正文写作",
+      "operation": "draft",
+      "modules": [
+        "research",
+        "writing",
+        "verify",
+        "delivery"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "evidence_alignment",
+        "argument_chain",
+        "citation_accuracy",
+        "expression_fidelity",
+        "delivery_integrity"
+      ],
+      "outputs": [
+        "requested prose, references when present, and material notes"
+      ],
+      "failure_routes": {
+        "scope_fit": "writing",
+        "evidence_alignment": "research",
+        "argument_chain": "writing",
+        "citation_accuracy": "verify",
+        "expression_fidelity": "writing",
+        "delivery_integrity": "delivery"
+      }
+    },
+    "writing-polish": {
+      "label": "润色或翻译",
+      "operation": "polish-or-translate",
+      "modules": [
+        "writing",
+        "verify"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "expression_fidelity"
+      ],
+      "outputs": [
+        "meaning-preserving text and flagged meaning-risk proposals"
+      ],
+      "failure_routes": {
+        "scope_fit": "writing",
+        "expression_fidelity": "writing"
+      }
+    },
+    "cross-artifact-review": {
+      "label": "跨文件核查",
+      "operation": "review",
+      "modules": [
+        "verify"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "cross_artifact_alignment"
+      ],
+      "outputs": [
+        "located findings and checked coverage without unauthorized edits"
+      ],
+      "failure_routes": {
+        "scope_fit": "verify",
+        "cross_artifact_alignment": "verify"
+      }
+    },
+    "prototype-cycle": {
+      "label": "制作与原型",
+      "operation": "prototype",
+      "modules": [
+        "concepts",
+        "production",
+        "visuals",
+        "critique"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "production_observation"
+      ],
+      "outputs": [
+        "useful prototype/test plan or real test records and next decision"
+      ],
+      "failure_routes": {
+        "scope_fit": "concepts",
+        "production_observation": "production"
+      }
+    },
+    "final-delivery": {
+      "label": "终稿交付",
+      "operation": "final",
+      "modules": [
+        "verify",
+        "delivery"
+      ],
+      "required_checks": [
+        "scope_fit",
+        "delivery_integrity"
+      ],
+      "outputs": [
+        "requested usable files and an accurate completion summary"
+      ],
+      "failure_routes": {
+        "scope_fit": "verify",
+        "delivery_integrity": "delivery"
+      }
+    },
+    "framework-maintenance": {
+      "label": "框架优化",
+      "operation": "configure",
+      "modules": [
+        "research",
+        "verify",
+        "delivery"
+      ],
+      "required_checks": [
+        "source_grounding",
+        "configuration_integrity",
+        "policy_integrity",
+        "delivery_integrity"
+      ],
+      "outputs": [
+        "updated project instructions, regression results and portable configuration"
+      ],
+      "failure_routes": {
+        "source_grounding": "research",
+        "configuration_integrity": "verify",
+        "policy_integrity": "verify",
+        "delivery_integrity": "delivery"
+      }
+    }
+  }
+}
